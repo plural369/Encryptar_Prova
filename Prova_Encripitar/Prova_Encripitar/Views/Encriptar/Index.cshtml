@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Prova_Encripitar.Models.EncriptarModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Decryptar</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Mensagem)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mensagem)
+            </td>
+            <td>
+                @Html.ActionLink("Decryptar", "Edit", new { id = item.Id }) 
+            </td>
+        </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Voltar", "Home")
+</div>
